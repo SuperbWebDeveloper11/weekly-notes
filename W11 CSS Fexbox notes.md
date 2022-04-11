@@ -1,41 +1,26 @@
-# CSS Flexible Box Module notes
+# CSS Flexible Box Module
 
-## Topics
+## The following notes are covered in this file
 
 - Introduction
 - The two axes of flexbox
-- Flex Container and Flex Items
-- Flex Container
-
-  - flex-direction
-  - flex-wrap
-  - flex-flow
-  - justify-content
-  - align-items
-  - align-content
-
-- Flex Items
-  - order
-  - flex-grow
-  - flex-shrink
-  - flex-basis
-  - flex
-  - align-self
+- Flex Container (flex-direction, flex-wrap, flex-flow, justify-content, align-items and align-content)
+- Flex Items (order, flex-grow, flex-shrink, flex-basis, flex and align-self)
 - Perfect Centering
 - Resources
 
 ## `Introduction`
 
-The Flexible Box Module, usually referred to as flexbox, was designed as a **one-dimensional layout model**, and as a method that could offer space distribution between items in an interface and powerful alignment capabilities.  
+The Flexible Box Module, usually referred to as flexbox, was designed as a **one-dimensional layout model**, and as a method that could offer space distribution between items in an interface and powerful alignment capabilities.
+
 When we describe flexbox as being one dimensional we are describing the fact that flexbox deals with layout in one dimension at a time — either as a row or as a column. This can be contrasted with the two-dimensional model of CSS Grid Layout, which controls columns and rows together.
+
+To start using the Flexbox model, you need to first define a flex container and flex items inside of it.
 
 ## `The two axes of flexbox`
 
-When working with flexbox you need to think in terms of two axes — the main axis and the cross axis. The **main axis** is defined by the flex-direction property, and the **cross axis** runs perpendicular to it. Everything we do with flexbox refers back to these axes, so it is worth understanding how they work from the outset.
-
-## `Flex Container and Flex Items`
-
-To start using the Flexbox model, you need to first define a flex container and flex items inside of it.
+When working with flexbox you need to think in terms of two axes — the main axis and the cross axis.
+The **main axis** is defined by the flex-direction property, and the **cross axis** runs perpendicular to it.
 
 ## `Flex Container`
 
@@ -47,14 +32,7 @@ The flex container becomes flexible by setting the display property to flex
 }
 ```
 
-**The flex container properties are:**
-
-- flex-direction
-- flex-wrap
-- flex-flow
-- justify-content
-- align-items
-- align-content
+Other flex container properties are: flex-direction, flex-wrap, flex-flow, justify-content, align-items and align-content
 
 ### `flex-direction`
 
@@ -133,7 +111,7 @@ The flex-flow property is a shorthand property for setting both the flex-directi
 
 ### `justify-content`
 
-The justify-content property is used to align the flex items on the main axis
+The justify-content property is used to align the flex items on the **main axis**
 
 ```css
 .flex-container {
@@ -148,7 +126,7 @@ The justify-content property is used to align the flex items on the main axis
 
 ### `align-items`
 
-The align-items property is used to align the flex items on the cross axis
+The align-items property is used to align the flex items on the **cross axis**
 
 ```css
 .flex-container {
@@ -163,7 +141,7 @@ The align-items property is used to align the flex items on the cross axis
 
 ### `align-content`
 
-The align-content property is used to align the flex lines on the cross axis
+The align-content property is used to **align the flex lines** on the **cross axis**
 
 ```css
 .flex-container {
@@ -178,31 +156,11 @@ The align-content property is used to align the flex lines on the cross axis
 }
 ```
 
-## `Perfect Centering`
-
-In the following example we will solve a very common style problem: perfect centering.
-
-```css
-.flex-container {
-  display: flex;
-  height: 300px;
-  justify-content: center;
-  align-items: center;
-}
-```
-
 ## `Flex Items`
 
 The direct child elements of a flex container automatically becomes flexible (flex) items.
 
-**The flex item properties are:**
-
-- order
-- flex-grow
-- flex-shrink
-- flex-basis
-- flex
-- align-self
+The flex item properties are: (order, flex-grow, flex-shrink, flex-basis, flex and align-self)
 
 ### `order`
 
@@ -214,9 +172,21 @@ The direct child elements of a flex container automatically becomes flexible (fl
 </div>
 ```
 
+### `flex-basis`
+
+The flex-basis property specifies the initial length of a flex item.
+
+```html
+<div class="flex-container">
+  <div class="flex-item" style="flex-basis: 200px">Item 1</div>
+  <div class="flex-item" style="flex-basis: 200px">Item 2</div>
+  <div class="flex-item" style="flex-basis: 200px">Item 3</div>
+</div>
+```
+
 ### `flex-grow`
 
-The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items.
+The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items (when the screen size is smaller than the total width of all items).
 
 ```html
 <div class="flex-container">
@@ -238,18 +208,6 @@ The flex-shrink property specifies how much a flex item will shrink relative to 
 </div>
 ```
 
-### `flex-basis`
-
-The flex-basis property specifies the initial length of a flex item.
-
-```html
-<div class="flex-container">
-  <div class="flex-item" style="flex-basis: 200px">Item 1</div>
-  <div class="flex-item" style="flex-basis: 200px">Item 2</div>
-  <div class="flex-item" style="flex-basis: 200px">Item 3</div>
-</div>
-```
-
 ### `flex`
 
 The flex property is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties.
@@ -264,7 +222,8 @@ The flex property is a shorthand property for the flex-grow, flex-shrink, and fl
 
 ### `align-self`
 
-The align-self property specifies the alignment for the selected item inside the flexible container.  
+The align-self property specifies the alignment for the selected item inside the flexible container.
+
 The align-self property overrides the default alignment set by the container's align-items property.
 
 ```html
@@ -273,6 +232,19 @@ The align-self property overrides the default alignment set by the container's a
   <div class="flex-item" style="align-self: center">Item 2</div>
   <div class="flex-item">Item 3</div>
 </div>
+```
+
+## `Perfect Centering`
+
+In the following example we will solve a very common style problem which is perfect centering.
+
+```css
+.flex-container {
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
 ```
 
 ## `Resources`

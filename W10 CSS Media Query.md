@@ -1,6 +1,6 @@
-# CSS Media Query Notes
+# CSS Media Query
 
-## These Notes are Cover the Following Topics
+## The following notes are covered in this file
 
 - What is a Media Query?
 - Add a Breakpoint
@@ -18,12 +18,13 @@ Media Queries CSS technique introduced in CSS3 that allows us to create Responsi
 Using Media Queries we can add breakpoints and apply the design according to these breakpoints
 
 ```css
-/* This style works only on screens (other media types are: all, print and speech) and when the width is above or equal 600px */
+/* This style works only on screens and when the width is less then or equal 600px */
 @media only screen and (max-width: 600px) {
   body {
     background-color: lightblue;
   }
 }
+/* other media types are: all, print and speech */
 ```
 
 ## Always Design for Mobile First
