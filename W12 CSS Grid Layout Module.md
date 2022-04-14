@@ -1,6 +1,6 @@
-# CSS Grid Layout Module
+# `CSS Grid Layout Model`
 
-## Topics
+## `Topics`
 
 - Introduction
 - Grid Gaps
@@ -13,7 +13,7 @@
 - Grid Items
 - Grid Lines
 
-## Introduction
+## `Introduction`
 
 The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
 An HTML element becomes a grid container when its display property is set to grid or inline-grid.
@@ -27,7 +27,7 @@ An HTML element becomes a grid container when its display property is set to gri
 The vertical lines of grid items are called columns.
 The horizontal lines of grid items are called rows.
 
-## Grid Gaps
+## `Grid Gaps`
 
 The spaces between each column/row are called gaps.
 
@@ -40,11 +40,11 @@ The spaces between each column/row are called gaps.
 }
 ```
 
-## Grid Container
+## `Grid Container`
 
 Grid containers consist of grid items, placed inside columns and rows.
 
-## grid-template-columns Property
+## `grid-template-columns Property`
 
 The grid-template-columns property defines the number of columns in your grid layout, and it can define the width of each column.
 If you have more than 4 items in a 4 columns grid, the grid will automatically add a new row to put the items in.
@@ -57,7 +57,7 @@ If you have more than 4 items in a 4 columns grid, the grid will automatically a
 }
 ```
 
-## grid-template-rows Property
+## `grid-template-rows Property`
 
 The grid-template-rows property defines the height of each row.
 If you have more than 4 items in a 4 columns grid, the grid will automatically add a new row to put the items in.
@@ -73,7 +73,7 @@ If you have more than 4 items in a 4 columns grid, the grid will automatically a
 }
 ```
 
-## justify-content Property
+## `justify-content Property`
 
 The justify-content property is used to align the whole grid inside the container.
 The grid's total width has to be less than the container's width for the justify-content property to have any effect.
@@ -85,7 +85,7 @@ The grid's total width has to be less than the container's width for the justify
 }
 ```
 
-## align-content Property
+## `align-content Property`
 
 The align-content property is used to vertically align the whole grid inside the container.
 The grid's total height has to be less than the container's height for the align-content property to have any effect.
@@ -98,13 +98,13 @@ The grid's total height has to be less than the container's height for the align
 }
 ```
 
-## Grid Items
+## `Grid Items`
 
 A grid container contains grid items.
 
 By default, a container has one grid item for each column, in each row, but you can style the grid items so that they will span multiple columns and/or rows.
 
-## Grid Lines
+## `Grid Lines`
 
 The lines between columns are called **column lines**.
 The lines between rows are called **row lines**.
@@ -137,7 +137,7 @@ The lines between rows are called **row lines**.
 </div>
 ```
 
-## Naming Grid Items
+## `Naming Grid Items`
 
 Name all items, and make a ready-to-use webpage template:
 

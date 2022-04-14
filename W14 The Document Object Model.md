@@ -1,33 +1,58 @@
-# The Document Object Model
+# `The Document Object Model`
 
-## Introduction
+## `The following notes are covered in this file`
 
-When you open a web page in your browser, the browser retrieves the page’s HTML text and parses it.
-The browser builds up a model of the document’s structure and uses this model to draw the page on the screen.
-You can read or modify this model and and the page on the screen is updated to reflect the changes.
+- Introduction
+- Finding elements
+- Changing the document
+- Replace img tags with text nodes contains their alt value
+- Event Handler
+- Event objects
+- Propagation
+- Default actions
+- Key events
+- Scroll events
 
-## Finding elements
+## `Introduction`
 
-If we want to find a specific node in the document, reaching it by starting at document.body and following a fixed path of properties is a bad idea. Doing so bakes assumptions into our program about the precise structure of the
+When you open a web page in your browser, the browser retrieves the page’s **HTML text** and parses it to build up the **DOM** which is used to draw the **page** on the screen.
+You can read and modify this model and the page on the screen is updated to reflect the changes.
+
+HTML text ----------> DOM ----------> web page
+
+## `Finding elements`
+
+If we want to find a specific node in the document, reaching it by starting at document.body and following a fixed path of properties is a **bad idea**. Doing so bakes assumptions into our program about the precise structure of the
 document—a structure you might want to change later.
 
 Instead you can use some methods like:
-**getElementsByTagName** method, which collects all elements with the given tag name,
-**getElementById** method to find a specific single node by it's Id
-**getElementsByClassName** method to find a nodes by their class attribute
 
-## Changing the document
+**getElementsByTagName**, which collects all elements with the given tag name,
+**getElementById**, to find a specific single node by it's Id
+**getElementsByClassName** to find a nodes by their class attribute
 
-Almost everything about the DOM data structure can be changed. The shape of the document tree can be modified by changing parent-child relationships. Nodes have a remove method to remove them from their current parent node. To add a child node to an element node, we can use appendChild, which puts it at the end of the list of children, or insertBefore, which inserts the node given as the first argument before the node given as the second argument.
+## `Changing the document`
+
+Almost everything about the DOM data structure can be changed. The shape of the document tree can be modified by changing parent-child relationships. Nodes have a **remove** method to remove them from their current parent node. To add a child node to an element node, we can use **appendChild**, which puts it at the end of the list of children, or **insertBefore**, which inserts the node given as the first argument before the node given as the second argument.
 
 Example
 
-```javascript
-let paragraphs = document.body.getElementsByTagName("p");
-document.body.insertBefore(paragraphs[2], paragraphs[0]);
+```html
+<div id="div">
+  <p>paragraph 1</p>
+  <p>paragraph 2</p>
+  <p>paragraph 3</p>
+</div>
 ```
 
-## Replace img tags with text nodes contains their alt
+```javascript
+const paragraphs = document.getElementsByTagName("p");
+const div = document.getElementById("div");
+
+div.insertBefore(paragraphs[2], paragraphs[1]);
+```
+
+## `Replace img tags with text nodes contains their alt value`
 
 ```html
 <p><img src="" alt="image 1" /></p>
@@ -46,7 +71,7 @@ function replaceImages() {
 }
 ```
 
-## Event Handler
+## `Event Handler`
 
 ```html
       <button id="btn">Click Me</button>
@@ -66,7 +91,7 @@ That example attaches a handler to the button node. Clicks on the button cause t
 Giving a node an onclick attribute has a similar effect. This works for most types of events—you can attach a handler through the attribute whose name is the event name with on in front of it.
 But a node can have only one onclick attribute, so you can register only one handler per node that way. The addEventListener method allows you to add any number of handlers so that it is safe to add handlers even if there is already another handler on the element.
 
-## Event objects
+## `Event objects`
 
 Though we have ignored it so far, event handler functions are passed an argument: the event object. This object holds additional information about the event.
 
@@ -78,23 +103,23 @@ btn.addEventListener("click", (event) => {
 });
 ```
 
-## Propagation
+## `Propagation`
 
 For most event types, handlers registered on nodes with children will also receive events that happen in the children. If a button inside a paragraph is clicked, event handlers on the paragraph will also see the click event.
 But if both the paragraph and the button have a handler, the more specific handler—the one on the button—gets to go first. The event is said to propagate outward, from the node where it happened to that node’s parent node and on to the root of the document.
 
-## Default actions
+## `Default actions`
 
 Many events have a default action associated with them. If you click a link, you will be taken to the link’s target. If you press the down arrow, the browser will scroll the page down. If you right-click, you’ll get a context menu. And so on.
 For most types of events, the JavaScript event handlers are called before the default behavior takes place. If the handler doesn’t want this normal behavior to happen, typically because it has already taken care of handling the event, it can call the preventDefault method on the event object.
 This can be used to implement your own keyboard shortcuts or context menu. It can also be used to obnoxiously interfere with the behavior that users expect. (For example, here is a link that cannot be followed). Try not to do such things unless you have a really good reason to. It’ll be
 unpleasant for people who use your page when expected behavior is broken.
 
-## Key events
+## `Key events`
 
 When a key on the keyboard is pressed, your browser fires a "keydown" event. When it is released, you get a "keyup" event.
 
-## Scroll events
+## `Scroll events`
 
 The following example draws a progress bar above the document and updates it to fill up as you scroll down
 
@@ -125,7 +150,3 @@ window.addEventListener("scroll", () => {
 ```
 
 I stopped in **Focus events** page 254
-
-## sources:
-
-Eloquent JavaScript 3rd edition book By Marijn Haverbeke

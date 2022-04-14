@@ -1,13 +1,12 @@
-# CSS Flexible Box Module
+# `CSS Flexible Box Model`
 
-## The following notes are covered in this file
+## `The following notes are covered in this file`
 
 - Introduction
 - The two axes of flexbox
 - Flex Container (flex-direction, flex-wrap, flex-flow, justify-content, align-items and align-content)
 - Flex Items (order, flex-grow, flex-shrink, flex-basis, flex and align-self)
 - Perfect Centering
-- Resources
 
 ## `Introduction`
 
@@ -246,12 +245,3 @@ In the following example we will solve a very common style problem which is perf
   align-items: center;
 }
 ```
-
-## `Resources`
-
-- https://www.w3schools.com/css/css3_flexbox.asp
-- https://www.w3schools.com/css/css3_flexbox_container.asp
-- https://www.w3schools.com/css/css3_flexbox_items.asp
-- https://www.w3schools.com/css/css3_flexbox_responsive.asp
-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
-- https://www.youtube.com/watch?v=3YW65K6LcIA

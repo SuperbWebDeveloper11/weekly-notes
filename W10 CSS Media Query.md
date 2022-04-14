@@ -1,6 +1,6 @@
-# CSS Media Query
+# `CSS Media Query`
 
-## The following notes are covered in this file
+## `The following notes are covered in this file`
 
 - What is a Media Query?
 - Add a Breakpoint
@@ -9,11 +9,11 @@
 - Orientation: Portrait / Landscape
 - Hide Elements With Media Queries
 
-## What is a Media Query?
+## `What is a Media Query?`
 
 Media Queries CSS technique introduced in CSS3 that allows us to create Responsive website
 
-## Add a Breakpoint
+## `Add a Breakpoint`
 
 Using Media Queries we can add breakpoints and apply the design according to these breakpoints
 
@@ -27,11 +27,11 @@ Using Media Queries we can add breakpoints and apply the design according to the
 /* other media types are: all, print and speech */
 ```
 
-## Always Design for Mobile First
+## `Always Design for Mobile First`
 
 Mobile First means designing for mobile before designing for desktop or any other device (This will make the page display faster on smaller devices).
 
-## Typical Device Breakpoints
+## `Typical Device Breakpoints`
 
 There are tons of screens and devices with different heights and widths, so it is hard to create an exact breakpoint for each device. To keep things simple you could target five groups:
 
@@ -62,7 +62,7 @@ There are tons of screens and devices with different heights and widths, so it i
 }
 ```
 
-## Orientation: Portrait / Landscape
+## `Orientation: Portrait / Landscape`
 
 Media queries can also be used to change layout of a page depending on the orientation of the browser.
 
@@ -76,7 +76,7 @@ You can have a set of CSS properties that will only apply when the browser windo
 }
 ```
 
-## Hide Elements With Media Queries
+## `Hide Elements With Media Queries`
 
 Another common use of media queries, is to hide elements on different screen sizes:
 
@@ -88,8 +88,3 @@ Another common use of media queries, is to hide elements on different screen siz
   }
 }
 ```
-
-## sources
-
-- https://www.w3schools.com/css/css_rwd_mediaqueries.asp
-- https://dev.to/artworks_joy/learn-css-media-queries-by-building-three-projects-3a8b
